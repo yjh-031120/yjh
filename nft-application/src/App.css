@@ -1,0 +1,115 @@
+/* App容器样式 */
+.App {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f6f9;
+  min-height: 100vh; /* 确保内容区至少占据整个视窗高度 */
+  box-sizing: border-box;
+}
+
+/* Header容器样式 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fff; /* 添加背景色，避免内容紧贴顶部 */
+}
+
+/* NFT画廊容器样式 */
+.nft-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* 每个NFT项的卡片样式 */
+.listBox {
+  width: calc(25% - 20px); /* 在大屏幕上每个卡片占四分之一宽度，并考虑gap */
+  min-width: 200px; /* 设置最小宽度，保证在小屏下不至于过窄 */
+  max-width: 300px; /* 设置最大宽度，防止在大屏下过于拉长 */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.2s ease-in-out; /* 添加过渡效果 */
+}
+
+.listBox:hover {
+  transform: translateY(-5px); /* 鼠标悬停时稍微上移 */
+}
+
+.listBox .listImg {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+}
+
+.listBox .listImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.listBox:hover .listImg img {
+  transform: scale(1.1); /* 图片放大效果 */
+}
+
+.listBox .listTitle {
+  padding: 5px;
+  height: 40px;
+  line-height: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333; /* 深色文字更易读 */
+}
+
+.listBox .listRemark {
+  padding: 5px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  color: #666; /* 中性灰色适合描述信息 */
+}
+
+.listBox .listBtnBox {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.listBox .listBtnBox button {
+  height: 35px;
+  width: 80%;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.listBox .listBtnBox button:hover {
+  background-color: #0056b3; /* 更深的颜色给点击反馈 */
+}
+
+.listBox .listBtnBox button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed; /* 禁用状态下的光标样式 */
+}
